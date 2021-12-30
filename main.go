@@ -1,12 +1,29 @@
 package main
 
 import (
+	"database/sql"
 	"fmt"
 	"github.com/gofiber/fiber/v2"
+	_ "github.com/lib/pq"
 	"log"
 )
 
 func main() {
+
+	// to do change this
+	connStr := "user=pqgotest dbname=pqgotest sslmode=verify-full"
+	db, err := sql.Open("postgres", connStr)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Printf("ToDo - Print Database Statistics, like entry count, etc.", db)
+
+	//println(db.Stats().InUse)
+
+	//age := 21
+	//rows, err := db.Query("SELECT name FROM users WHERE age = $1", age)
+
 	app := fiber.New()
 
 	// API v1

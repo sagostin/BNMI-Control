@@ -6,6 +6,9 @@ Agent entries will handle various types of data entries, we will need multiple t
 
 */
 
+type SNMPEntry struct {
+}
+
 type SpeedTestEntry struct {
 	// TODO
 }
@@ -19,6 +22,7 @@ type TraceRouteEntry struct {
 type GeneralEntry struct {
 	ID         int
 	AgentID    int
+	Timestamp  int64
 	MinLatency float64
 	MaxLatency float64
 	AvgLatency float64
