@@ -10,6 +10,7 @@ import (
 
 func main() {
 
+	// runs 24/7, needs to be scalale (could just run full instances, and load balance
 	// to do change this
 	connStr := "user=pqgotest dbname=pqgotest sslmode=verify-full"
 	db, err := sql.Open("postgres", connStr)
@@ -55,6 +56,8 @@ func main() {
 
 		Only allow if agent ID exists. Throw HTTP codes!
 	*/
+
+	// TODO websockets?
 
 	// POST /api/v1/agent/put/:agentid
 	/*
